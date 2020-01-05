@@ -1,0 +1,126 @@
+@import "colors";
+
+body {
+
+    $B200: map-get($navy, 200);
+    $B300: map-get($navy, 300);
+    $B400: map-get($navy, 400);
+    $B500: map-get($navy, 500);
+    
+    $A200: map-get($white, 200);
+    $A300: map-get($white, 200);
+    $A400: map-get($white, 200);
+    $A500: map-get($white, 200);
+
+    &.dark {
+        background-color: map-get($dark, background);
+        .breadcrumb {
+            background-color: map-get($dark, background);
+            border-color: map-get($dark, border);
+        }
+        .breadcrumb-item {
+            &.active {
+                color: map-get($dark, fontActive);
+            }
+        }
+        .app-header {
+            background-color: map-get($dark, background);
+            border-color: map-get($dark, border);
+        }
+        .jumbotron{
+            background: $B400;
+            color: $A200;
+        }
+        .card{
+            background:$B500;
+            color: $A300;
+        }
+        .card-header{
+            background:$B500;
+        }
+        .card-body{
+           
+           .table{
+            color: $A400;
+           }
+           .table-hover tbody tr:hover{
+               color: $A300;
+           }
+           input{
+               background:$A400;
+               border: none;
+           }
+           textarea{
+               background:$A400;
+               border: none;
+           }
+           select{
+               background:$A400;
+               border: none;
+           }
+           .list-group-item{
+               background:$B400;
+           } 
+        
+        .audioPlayer{
+            background:$B200;
+
+                .abtn-repeat
+                {
+                    background:$A200;
+                
+                    i{
+                        color:#1D2A32;
+                        font-size:13px;
+                        position: absolute;
+                        top:2.6px;
+                        left:2.6px;
+                    }
+                }
+                .bar{
+                    background:$A300;
+                }
+            }
+        }
+        
+        .navbar-nav {
+
+            .nav-link {
+                color: map-get($dark, font);
+
+                &:hover {
+                    color: map-get($dark, fontActive);
+                }
+
+                &.active {
+                    color: map-get($dark, fontActive);
+                }
+            }
+        }
+
+        .app-footer {
+            background-color: map-get($dark, background);
+            border-color: map-get($dark, border);
+            color: map-get($dark, font);
+        }
+
+        .sidebar {
+            background-color: $B500;
+
+            .nav-link {
+
+                &.active {
+                    background-color: $B300;
+                }
+
+                .nav-icon {
+                    color: #d6d6d6;
+                }
+
+                &:hover {
+                    background-color: $B200;
+                }
+            }
+        }
+    }
+}

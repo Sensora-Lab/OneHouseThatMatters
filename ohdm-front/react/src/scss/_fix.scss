@@ -1,0 +1,51 @@
+.pagination {
+    margin-bottom: 0;
+}
+
+.sidebar {
+
+    .nav-dropdown-items {
+
+        .nav-item {
+
+            .nav-link {
+                padding-left: 25px;
+            }
+
+            .nav-item {
+
+
+                .nav-link {
+                    padding-left: 40px;
+                }
+            }
+        }
+
+        .nav-dropdown-items {
+            background-color: rgba(0,0,0,0.1)
+        }
+    }
+}
+
+
+table {
+
+    tr {
+
+        &.picked {
+            background-color: rgba(99, 194, 222, 0.3) !important;
+        }
+    }
+}
+
+input {
+
+    &.small {
+        width: 100px;
+        transition: width 0.2s;
+
+        &:focus {
+            width: 200px;
+        }
+    }
+}

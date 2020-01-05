@@ -1,0 +1,28 @@
+$C200: map-get($cyan, 200);
+$C300: map-get($cyan, 300);
+$C400: map-get($cyan, 400);
+$C500: map-get($cyan, 500);
+$C600: map-get($cyan, 600);
+
+body {
+
+
+    .sidebar {
+        background-color: $C400;
+
+        .nav-link {
+
+            &.active {
+                background-color: $C600;
+            }
+
+            .nav-icon {
+                color: #d6d6d6;
+            }
+
+            &:hover {
+                background-color: $C200;
+            }
+        }
+    }
+}
