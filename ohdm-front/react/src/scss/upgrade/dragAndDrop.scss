@@ -1,0 +1,16 @@
+.dragAndDrop {
+
+	.moveable {
+		padding: 4px 10px;
+		border-top: 1px solid rgba(0,0,0,0.3);
+
+		&:last-child {
+			border-bottom: 1px solid rgba(0,0,0,0.3);
+		}
+
+		&.above {
+
+			border-top: 3px solid #005757;
+		}
+	}
+}

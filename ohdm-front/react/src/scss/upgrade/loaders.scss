@@ -1,0 +1,84 @@
+@keyframes squer {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+      opacity: 0.5;
+      transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.loader {
+
+    .center {
+        display: block;
+        width: 63px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .flex-wraper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .squer {
+        width: 15px;
+        height: 20px;
+        background-color: #20a8d8;
+        margin: 1px 0 0;
+        flex: 0 0 20px;
+        animation-duration: 1.5s;
+        animation-name: squer;
+        animation-iteration-count: infinite;
+
+        $off: .11s;
+
+        &-0, {
+            //animation-delay: 0;
+        }
+
+        &-1, &-3 {
+            animation-delay: $off;
+        }
+
+        &-2, &-4, &-6 {
+            animation-delay: $off * 2;
+        }
+
+        &-5, &-7 {
+            animation-delay: $off * 3;
+        }
+
+        &-8 {
+            animation-delay: $off * 4;
+        }
+    }
+
+    .screen {
+
+        .background {
+            background-color: rgba(0,0,0,0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .center-top {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+    }
+}

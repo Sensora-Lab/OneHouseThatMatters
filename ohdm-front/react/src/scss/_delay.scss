@@ -1,0 +1,17 @@
+.confirm-btn {
+  margin:auto;
+  display:block;
+}
+
+.confirm-btn.btn-label {
+  position: relative;
+  display: inline-block;
+  padding: 6px 6px;
+  background: rgba(0,0,0,0.15);
+  border-radius: 3px 0 0 3px;
+}
+
+.confirm-btn.btn-labeled {
+  padding-top: 0;
+  padding-bottom: 0;
+}

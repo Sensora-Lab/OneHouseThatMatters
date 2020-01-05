@@ -1,0 +1,114 @@
+table {
+	$times: 5;
+
+	tr {
+
+		td {
+
+			&.td- {
+
+				&padding- {
+
+					&top {
+
+						@for $i from 1 through $times {
+
+							&-#{$i * 5} {
+								padding-top: #{$i * 5}px;
+							}
+						}
+					}
+
+					&bottom {
+
+						@for $i from 1 through $times {
+
+							&-#{$i * 5} {
+								padding-bottom: #{$i * 5}px;
+							}
+						}
+					}
+
+					&left {
+
+						@for $i from 1 through $times {
+
+							&-#{$i * 5} {
+								padding-left: #{$i * 5}px;
+							}
+						}
+					}
+
+					&right {
+
+						@for $i from 1 through $times {
+
+							&-#{$i * 5} {
+								padding-right: #{$i * 5}px;
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}
+
+	&.multiselect {
+
+		tr {
+
+			&.transitions {
+
+				&.top {
+					border-left: 2px solid transparent;
+					border-right: 2px solid transparent;
+					transition: background .2s, color .2s, border .2s;
+
+					.audioPlayer {
+
+						.aprogress {
+
+							.aloader {
+
+								transition: background .2s;
+							}
+						}
+					}
+				}
+
+				&.bottom {
+					border: 2px solid transparent;
+					transition: border .2s;
+				}
+			}
+
+			&.open {
+
+				&.top {
+					border-top: 1px solid $C400;
+					border-left: 2px solid $C400;
+					border-right: 2px solid $C400;
+					background-color: $C400;
+					color: #fff;
+
+					.audioPlayer {
+
+						.aprogress {
+
+							.aloader {
+
+								background-color: map-get($brown, 400)
+							}
+						}
+					}
+				}
+
+				&.bottom {
+					border: 2px solid $C400;
+					border-top: none;
+				}
+			}
+		}
+	}
+}

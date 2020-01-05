@@ -1,0 +1,140 @@
+.labels {
+
+	display: inline-block;
+
+	.yesnoCheckbox {
+		margin-bottom: 0;
+		cursor: pointer;
+		line-height: 10px;
+
+		div {
+			position: relative;
+			display: inline-block;
+			background-color: #f86c6b;
+			color: #fff;
+			padding: 3px 9px;
+			border-radius: 20px;
+			min-width: 40px;
+			text-align: center;
+			transition: background 0.2s;
+			height: 27px;
+			overflow: hidden;
+
+			&:after, &:before {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 8px;
+				transition: left 0.2s;
+			}
+
+			&:after {
+				content: 'no';
+				left: 0;
+
+			}
+
+			&:before {
+				content: 'yes';
+				left: 50px;
+			}
+		}
+
+		input:checked + div {
+			background-color: #4dbd74;
+
+			&:after {
+				left: -50px;
+			}
+
+			&:before {
+				left: 0;
+			}
+		}
+	}
+
+	&.hashtag {
+
+		input {
+			display: none;
+		}
+
+		span {
+			display: inline-block;
+			border: 2px solid $C400;
+			padding: 3px 5px;
+			margin-right: 5px;
+			position: relative;
+			z-index: 2;
+			overflow: hidden;
+			transition: color 0.2s;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: $C400;
+				z-index: -1;
+				transform: translateY(100%);
+				transition: transform 0.2s;
+			}
+
+			&:hover {
+
+				&::before {
+					transform: translateY(75%);
+				}
+			}
+		}
+
+		input:checked + span {
+			color: #fff;
+
+			&::before {
+				transform: translateY(0%);
+			}
+		}
+	}
+
+	&.texttag {
+		width: 100%;
+		position: relative;
+
+		input {
+			width: 100%;
+			border-radius: 0;
+			border: 2px solid $C400;
+			transition: background 0.2s, color 0.2s;
+
+			&:not(:placeholder-shown):not(:focus) {
+				background-color: $C400;
+				color: #fff;
+			}
+
+			&:not(:placeholder-shown) + .placeholder {
+				opacity: 0.5;
+				letter-spacing: -1.2px;
+			}
+		}
+
+        select {
+            width: 100%;
+            border-radius: 0;
+            border: 2px solid $C400;
+            transition: background 0.2s, color 0.2s;
+
+        }
+
+		.placeholder {
+			position: absolute;
+			top: 6px;
+			right: 30px;
+			opacity: 0.6;
+			pointer-events: none;
+			transition: opacity 0.2s, letter-spacing 0.2s;
+		}
+	}
+}
