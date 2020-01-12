@@ -1,0 +1,5 @@
+ext.versions = [
+        'guice'   : '4.2.2',
+        'jackson' : '2.10.1',
+        'querydsl': '4.2.2'
+]

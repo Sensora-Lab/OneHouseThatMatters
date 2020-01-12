@@ -1,0 +1,8 @@
+ext.repos = [
+        'jbossMavenRepo': 'https://repository.jboss.org/nexus/content/repositories/thirdparty-releases/',
+        'mavenRepos'    : {
+            jcenter()
+            mavenCentral()
+            mavenLocal()
+        }
+]

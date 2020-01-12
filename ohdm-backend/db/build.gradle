@@ -1,0 +1,18 @@
+plugins {
+    id 'idea'
+}
+
+repositories {
+    maven {
+        url repos.jbossMavenRepo
+    }
+}
+
+dependencies {
+    compile libraries.db
+    compile libraries.commons_lang
+    compile libraries.jackson
+
+    testCompile libraries.db_test
+    annotationProcessor libraries.db_annotation
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd"
+                   logicalFilePath="/changelog/db.changelog-1.0.xml">
+
+    <!-- plot table -->
+    <changeSet id="1.0-plot-table" author="lmckwcz">
+        <createTable tableName="plot">
+            <column name="id" type="varchar(22)">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             primaryKeyName="plot_pkey"/>
+            </column>
+            <column name="ref_number" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="location" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <!-- offer table -->
+    <changeSet id="1.0-offer-table" author="lmckwcz">
+        <createTable tableName="offer">
+            <column name="id" type="varchar(22)">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             primaryKeyName="offer_pkey"/>
+            </column>
+            <column name="plot_id" type="varchar(22)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="decimal(10,2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="url" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="opened_at" type="date">
+                <constraints nullable="true"/>
+            </column>
+            <column name="closed_at" type="date">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1.0.0-plot_has_offers" author="lmckwcz">
+        <addForeignKeyConstraint
+                baseTableName="offer"
+                baseColumnNames="plot_id"
+                constraintName="fk_offer-plot_idx"
+                referencedTableName="plot"
+                referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

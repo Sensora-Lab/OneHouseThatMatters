@@ -1,0 +1,34 @@
+apply from: file("./gradle/libraries.gradle")
+
+buildscript {
+    apply from: file("./gradle/libraries.gradle")
+}
+
+allprojects {
+    apply plugin: "java"
+    apply plugin: "groovy"
+    group 'ohdm'
+}
+
+sourceCompatibility = 1.11
+
+subprojects {
+
+    buildscript {
+        repositories repos.mavenRepos
+    }
+    repositories repos.mavenRepos
+
+    dependencies {
+        compile libraries.log
+        compileOnly libraries.lombok
+        annotationProcessor libraries.lombok
+
+        // test
+        testCompile libraries.akka_test
+        testCompile libraries.groovy
+        testCompile libraries.guice_test
+        testCompile libraries.spock_guice
+
+    }
+}

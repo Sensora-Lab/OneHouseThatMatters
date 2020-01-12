@@ -1,0 +1,5 @@
+package changelog
+
+databaseChangeLog() {
+    include(file: 'db.changelog-1.0.xml', relativeToChangelogFile: true)
+}
